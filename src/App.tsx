@@ -7,7 +7,7 @@ const App = () => {
   const routing = useRoutes(routes)
   return (
     <>
-      <Header/>
+      {/* <Header/> */}
       {routing}
     </>
   )
