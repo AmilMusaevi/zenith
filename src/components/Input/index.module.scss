@@ -1,0 +1,15 @@
+.input{
+     padding: .5rem .75rem;
+     font-weight:600;
+
+     background-color: var(--clr-gray-100);
+     border: 1px solid var(--clr-gray-100);
+     color: var(--clr-gray-800);
+     height:3rem;
+}
+
+:global(.ant-form-item-label) label {
+    color:#737373 !important;
+    font-weight: 600;
+  }
+ 

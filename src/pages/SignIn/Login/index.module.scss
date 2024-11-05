@@ -1,0 +1,18 @@
+
+@import "/src/styles/abstracts/mixins";
+
+.signIn {
+  @include flexContainer(_, center, center, 0.5rem);
+  width: 90%;
+  margin-top: 2rem;
+  &_info {
+    color: var(--clr-gray-500);
+  }
+  &_redirect {
+    color: var(--clr-gray-900) !important;
+    font-weight: 700;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

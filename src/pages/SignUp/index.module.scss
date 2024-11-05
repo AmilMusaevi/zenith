@@ -1,0 +1,23 @@
+@import "/src/styles/abstracts/mixins";
+
+
+.signup_title {
+  margin-bottom: 2rem;
+
+  @include flexContainer(column, center, flex-start, _);
+  & img {
+    border-radius: 5px;
+    object-fit: cover;
+    width: 50px;
+    margin-bottom: 1.5rem;
+  }
+  & h3 {
+    color: var(--clr-gray-900);
+    margin-bottom: 0.5rem;
+    @include textProps(1.5rem, 700, 2rem);
+  }
+  & p {
+    color: var(--clr-gray-900);
+    font-weight: 600;
+  }
+}
