@@ -1,24 +1,39 @@
 import { Form } from "antd";
 import { Link } from "react-router-dom";
 
-import { InputComponent, ButtonComponent } from "../../../components";
+// import { SignUpData } from "../../../types/types";
 import { passwordRules } from "../../../utils/validationRules";
+import { InputComponent, ButtonComponent } from "../../../components";
+// import { useRegisterUser } from "../../../service/auth/auth.mutation";
 
 import styles from "./index.module.scss";
 
 const Index = () => {
   const form = Form.useForm()[0];
+
+  function handleSignUp() {
+  }
   return (
-    <Form layout="vertical" form={form}>
-      {["userName", "email"].map((fieldName) => (
+    <Form layout="vertical" form={form} onFinish={handleSignUp}>
+      <InputComponent
+        name={"firstName"}
+        placeholder={"First name"}
+        style={{ width: "90%" }}
+        required
+        label="First name"
+        message={
+          <span className="error_message">First name field is required</span>
+        }
+      />
+      {["lastName", "email"].map((fieldName) => (
         <InputComponent
           key={fieldName}
           name={fieldName}
-          label={fieldName === "userName" ? "User name" : "Email"}
-          placeholder={fieldName === "userName" ? "User name" : "Email"}
+          label={fieldName === "lastName" ? "Last name" : "Email"}
+          placeholder={fieldName === "lastName" ? "Last name" : "Email"}
           style={{ width: "90%" }}
           rules={
-            fieldName !== "userName"
+            fieldName !== "lastName"
               ? [
                   {
                     type: "email",
@@ -34,8 +49,8 @@ const Index = () => {
           required
           message={
             <span className="error_message">
-              {fieldName === "userName"
-                ? "User name field is required"
+              {fieldName === "lastName"
+                ? "Last name field is required"
                 : "Email field is required"}
             </span>
           }

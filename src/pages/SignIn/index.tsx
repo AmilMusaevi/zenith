@@ -14,12 +14,13 @@ const SignIn = () => {
         style={{
           display: "flex",
           alignItems: "center",
-          justifyContent: "space-between",
+          justifyContent: "center",
           height: "100vh",
           padding: "2.5rem",
+          margin:"0 "
         }}
       >
-        <Col span={12} style={{ display: "flex", justifyContent: "flex-end" }}>
+        <Col span={10}>
           <Row gutter={[24, 24]} style={{ width: "100%", maxWidth: "500px" }}>
             <Col span={24}>
               <div className={styles.signup_title}>
@@ -32,7 +33,7 @@ const SignIn = () => {
           </Row>
         </Col>
         <Col
-          span={12}
+          span={10}
           style={{
             display: "flex",
             justifyContent: "center",
@@ -40,12 +41,14 @@ const SignIn = () => {
           }}
         >
           <img
+          
             src="../../../src/assets/auth-side-bg.png"
             alt="authSideBackGroundImg"
             style={{
               maxWidth: "100%",
               width: "100%",
-              height: "auto",
+              height:"80vh",
+              objectFit:"cover",
               borderRadius: "1.5rem",
             }}
           />

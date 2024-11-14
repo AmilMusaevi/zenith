@@ -1,11 +1,8 @@
-import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
         <header>
-            <Link to="/signUp">
-                signup
-            </Link>
+          headeerrrrr
         </header>
     );
 }

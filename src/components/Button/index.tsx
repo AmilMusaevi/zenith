@@ -9,7 +9,7 @@ type TButton = {
   size?: "large" | "middle" | "small";
   shape?: "default" | "circle" | "round";
   type?: "primary" | "dashed" | "link" | "text" | "default";
-  htmlType?:"submit" | "reset" | undefined
+  htmlType?: "submit" | "reset" | undefined;
   link?: string;
   style?: React.CSSProperties;
 };
@@ -25,7 +25,14 @@ const ButtonComponent: React.FC<TButton> = ({
   ...rest
 }) => {
   const button = (
-    <Button htmlType ={ htmlType} loading={loading} type={type} size={size} shape={shape} {...rest}>
+    <Button
+      htmlType={htmlType}
+      loading={loading}
+      type={type}
+      size={size}
+      shape={shape}
+      {...rest}
+    >
       {text}
     </Button>
   );

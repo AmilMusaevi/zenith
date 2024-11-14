@@ -11,13 +11,14 @@ const SignUp = () => {
         gutter={[24, 24]}
         style={{
           display: "flex",
-          alignItems: "flex-start",
-          justifyContent: "space-between",
+          alignItems: "center",
+          justifyContent: "center",
           height: "100vh",
           padding: "2.5rem",
+          margin:"0 "
         }}
       >
-        <Col span={12} style={{ display: "flex", justifyContent: "flex-end" }}>
+        <Col span={10}>
           <Row gutter={[24, 24]} style={{ width: "100%", maxWidth: "500px" }}>
             <Col span={24}>
               <div className={styles.signup_title}>
@@ -43,7 +44,8 @@ const SignUp = () => {
             style={{
               maxWidth: "100%",
               width: "100%",
-              height: "auto",
+              height:"80vh",
+              objectFit:"cover",
               borderRadius: "1.5rem",
             }}
           />
