@@ -24,7 +24,7 @@ const SignIn = () => {
           <Row gutter={[24, 24]} style={{ width: "100%", maxWidth: "500px" }}>
             <Col span={24}>
               <div className={styles.signup_title}>
-                <img src="../../../src/assets/zenithLogo.png" alt="logo" />
+                <img src="../../../public/assets/zenithLogo.png" alt="logo" />
                 <h3>Welcome back!</h3>
                 <p>Please enter your credentials to sign in!</p>
               </div>
@@ -42,7 +42,7 @@ const SignIn = () => {
         >
           <img
           
-            src="../../../src/assets/auth-side-bg.png"
+            src="../../../public/assets/auth-side-bg.png"
             alt="authSideBackGroundImg"
             style={{
               maxWidth: "100%",

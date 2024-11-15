@@ -22,7 +22,7 @@ const SignUp = () => {
           <Row gutter={[24, 24]} style={{ width: "100%", maxWidth: "500px" }}>
             <Col span={24}>
               <div className={styles.signup_title}>
-                <img src="../../../src/assets/zenithLogo.png" alt="logo" />
+                <img src="../../../public/assets/zenithLogo.png" alt="logo" />
                 <h3>Sign Up</h3>
                 <p>And let's get started with your free trial</p>
               </div>
@@ -39,7 +39,7 @@ const SignUp = () => {
           }}
         >
           <img
-            src="../../../src/assets/auth-side-bg.png"
+            src="../../../public/assets/auth-side-bg.png"
             alt="authSideBackGroundImg"
             style={{
               maxWidth: "100%",
