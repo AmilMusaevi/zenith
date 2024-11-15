@@ -6,14 +6,12 @@ import styles from "./index.module.scss";
 
 const SignUp = () => {
   return (
-    <>
       <Row
         gutter={[24, 24]}
         style={{
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          height: "100vh",
           padding: "2.5rem",
           margin:"0 "
         }}
@@ -51,7 +49,6 @@ const SignUp = () => {
           />
         </Col>
       </Row>
-    </>
   );
 };
 
