@@ -1,7 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import type { RootState } from "./store.config";
-import { IState } from "./store";
-
+import { IState } from "./store.types";
 const initialState: IState = {
   loader: false,
   user: null,

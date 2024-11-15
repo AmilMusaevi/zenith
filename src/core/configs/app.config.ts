@@ -1,3 +1,4 @@
 export const environment = {
-    mainApi:import.meta.env.MAIN_API
-}
+    mainApi: import.meta.env.VITE_MAIN_API,
+  };
+  

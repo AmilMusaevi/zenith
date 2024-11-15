@@ -1,5 +1,5 @@
 
-@import "/src/styles/abstracts/mixins";
+@use "/src/styles/abstracts/mixins" as *;
 
 .signup {
   @include flexContainer(_, center, center, 0.5rem);

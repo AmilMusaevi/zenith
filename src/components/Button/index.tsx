@@ -11,6 +11,7 @@ type TButton = {
   type?: "primary" | "dashed" | "link" | "text" | "default";
   htmlType?: "submit" | "reset" | undefined;
   link?: string;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>; 
   style?: React.CSSProperties;
 };
 

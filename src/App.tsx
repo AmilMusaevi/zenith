@@ -1,3 +1,4 @@
+import { ToastContainer } from 'react-toastify'
 import { routes } from './router'
 import { useRoutes } from 'react-router-dom'
 
@@ -8,6 +9,7 @@ const App = () => {
   return (
     <>
       {routing}
+      <ToastContainer/>
     </>
   )
 }

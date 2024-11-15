@@ -1,18 +1,44 @@
 import { Form } from "antd";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-// import { SignUpData } from "../../../types/types";
+import { SignUpData } from "../../../types/types";
 import { passwordRules } from "../../../utils/validationRules";
 import { InputComponent, ButtonComponent } from "../../../components";
-// import { useRegisterUser } from "../../../service/auth/auth.mutation";
-
+import { useRegisterUser } from "../../../service/auth/auth.mutation"
+import { successToast } from "../../../components/Toast";
 import styles from "./index.module.scss";
 
 const Index = () => {
   const form = Form.useForm()[0];
 
-  function handleSignUp() {
+  const { mutate } = useRegisterUser();
+  const navigate = useNavigate();
+  function handleSignUp(data: SignUpData) {
+    const {
+      firstName,
+      address = "Baki",
+      birth_date = "2022-12-11",
+      phone = "+9949999999",
+      ...userData
+    } = data;
+
+    mutate(
+      {
+        address,
+        birth_date,
+        name: firstName,
+        phone,
+        ...userData,
+      },
+      {
+        onSuccess: () => {
+          successToast("Qeydiyyat uğurla başa çatdı zəhmət olmasa mail adresinizi və şifrənizi daxil edərək giriş edin !")
+          navigate("/signIn"); 
+        },
+      }
+    );
   }
+
   return (
     <Form layout="vertical" form={form} onFinish={handleSignUp}>
       <InputComponent
@@ -25,15 +51,15 @@ const Index = () => {
           <span className="error_message">First name field is required</span>
         }
       />
-      {["lastName", "email"].map((fieldName) => (
+      {["surname", "email"].map((fieldName) => (
         <InputComponent
           key={fieldName}
           name={fieldName}
-          label={fieldName === "lastName" ? "Last name" : "Email"}
-          placeholder={fieldName === "lastName" ? "Last name" : "Email"}
+          label={fieldName === "surname" ? "Last name" : "Email"}
+          placeholder={fieldName === "surname" ? "Last name" : "Email"}
           style={{ width: "90%" }}
           rules={
-            fieldName !== "lastName"
+            fieldName !== "surname"
               ? [
                   {
                     type: "email",
@@ -49,14 +75,14 @@ const Index = () => {
           required
           message={
             <span className="error_message">
-              {fieldName === "lastName"
+              {fieldName === "surname"
                 ? "Last name field is required"
                 : "Email field is required"}
             </span>
           }
         />
       ))}
-      {["password", "confirmPassword"].map((fieldName) => (
+      {["password", "password_confirmation"].map((fieldName) => (
         <InputComponent
           key={fieldName}
           name={fieldName}
@@ -68,7 +94,7 @@ const Index = () => {
           style={{ width: "90%" }}
           required
           rules={
-            fieldName === "confirmPassword"
+            fieldName === "password_confirmation"
               ? [
                   {
                     validator(_, value) {

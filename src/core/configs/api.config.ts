@@ -1,3 +1,4 @@
 export const API = {
-    signUp:"/admin/register"
+    signUpUser:"/user/register",
+    signInUser:"/user/login"
 }

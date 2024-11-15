@@ -8,7 +8,7 @@ interface PrivateRouteProps {
 
 const PrivateRoute: React.FC<PrivateRouteProps> = ({ children }) => {
   const token = getToken();
-  
+  console.log("token", token)
   return token ? <>{children}</> : <Navigate to="/signIn" />;
 };
 
